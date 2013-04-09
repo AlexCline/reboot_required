@@ -2,6 +2,14 @@ reboot_required
 =======
 *A Puppet module for scheduling reboots of systems with pending updates.
 
+Warning
+-------
+
+__This module should not be used if you're running a VM that uses a host-specific kernel.__
+Many VPS providers use custom-build, host-specific kernels for the client machines in their environment.  This means the kernel your system is running won't be available from the OS vendor.  This module only detects updates available from the OS repositories and can't detect custom kernels that may be available.
+
+You should check with your hosting provider if you're unsure of what type of kernel your system uses.
+
 Usage
 -------
 
