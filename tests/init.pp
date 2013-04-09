@@ -9,3 +9,12 @@
 # Learn more about module testing here: http://docs.puppetlabs.com/guides/tests_smoke.html
 #
 include reboot_required
+
+class {'reboot_required':
+  when    => 'this evening',
+  message => 'Rebooting the system to perform a kernel upgrade.',
+}
+
+class {'reboot_required':
+  when => 'this weekend',
+}
